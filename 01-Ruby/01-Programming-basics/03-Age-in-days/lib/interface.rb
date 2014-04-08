@@ -3,22 +3,15 @@
 # from which "require_relative" is called
 require_relative './age_in_days'
 
-### Talking with the user ###
-puts 'What\'s your year of birth ?'
-birth_year = gets.chomp.to_i
+birthdate = ["year", "month", "day"]
 
-puts 'What\'s your month of birth ?'
-birth_month = gets.chomp.to_i
+for k in 0..2
+ puts "What's your " + birthdate[k] + " of birth ?"
+ birthdate[k] = gets.chomp.to_i
+end
 
-puts 'What\'s your day of birth ?'
-birth_day = gets.chomp.to_i
-#############################
+calculated_age = age_in_days(birthdate[0], birthdate[1], birthdate[2])
 
-puts 'Computing your age (with the most complicated algorithms)........'
-
-# TODO: This is probably where you'd like to use your brand new function!
-calculated_age = 0
-
-
-# Finally, print user's age in days:
 puts "You are #{calculated_age} days old... phew!"
+
+
