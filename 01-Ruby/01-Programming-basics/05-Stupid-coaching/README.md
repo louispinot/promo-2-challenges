@@ -45,7 +45,7 @@ The objectives of this challenge are :
 ## Learning Badges
 - What's the usual flow of a program ?
 - How do structures like `if..else..end` or `while..end` change this flow ?
-- How do these structures work ? 
+- How do these structures work ?
 - What's a conditional statement ? Which values can it take ? What's the difference between `=` and `==` ?
 - Does a simple method call change the flow of your program ?
 
