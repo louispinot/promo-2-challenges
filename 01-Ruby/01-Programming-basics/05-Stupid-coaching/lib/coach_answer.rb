@@ -1,7 +1,7 @@
 def coach_answer(your_message)
-  return if your_message == "I am going to work right now SIR !"
+  return "" if your_message == "I am going to work right now SIR !"
   if your_message[-1..-1] == "?"
-    "Silly question! get dressed and go to work !"
+    "Silly question, get dressed and go to work !"
   else
     "I don't care son, get dressed and go to work !"
   end
