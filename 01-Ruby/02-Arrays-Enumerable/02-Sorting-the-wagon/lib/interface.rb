@@ -16,6 +16,6 @@ end while name != ""
 # TODO: Call `wagon_sort` method and display the sorted student list
 
 wagon_sort(students)
-Puts "Congratulations! Your Wagon has #{students.length} students:"
+puts "Congratulations! Your Wagon has #{students.count - 1} students:"
 for student in students do
   print "#{student}, " end
