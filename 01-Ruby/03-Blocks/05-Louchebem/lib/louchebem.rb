@@ -18,27 +18,27 @@ end
 
 
 def prepare_end (word, vowels=%w(a e i o u y))
-
     unless vowels.include? word[-1]
       word = word[0..-2] if vowels.include? word[-2]
       word[-2..-1] = "é" if word[-2..-1] == "er"
     end
-
-
 end
 
 
-def slash_start (word, vowels=%w(a e i o u y))
-    if vowels.include? word[0]  # commence par une voyelle
-          word = word.insert(0, "l")
-
-
-    else   #commence par une consonne
-
-
-    end
+def deal_with_start (word, vowels=%w(a e i o u y))
+    unless vowels.include? word[0]  # commence par une voyelle
+      if vowels.include? word[1]  # 2e lettre est une consonne
+        start = word[0..1]
+        word = word[2..-1] + start
+      else                        # 2e lettre est une voyelle
+        start = word[0]
+        word = word[1..-1] + start
+      end
+    word = word.insert(0, "l")
 end
 
+
+def pimp_the_end (word())
 
 
 
