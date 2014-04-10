@@ -12,6 +12,16 @@ def tag(tag_name, attr = nil)
   my_tag
 end
 
+def tag_correction_boris(tag_name, attr = nil)
+  if attr == nil
+    res = "<#{tag_name}>#{yield}</#{tag_name}>"
+  else
+    res = "<#{tag_name} #{attr[0]}='#{attr[1]}'>#{yield}</#{tag_name}>"
+  end
+  res
+end
+
+
 def timer_for
   #TODO:  Return time taken to execute the given block
   start = Time.now
