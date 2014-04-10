@@ -41,11 +41,6 @@ def pimp_the_end (word)
 end
 
 
-
-
-
-
-
 def louchebemize(sentence)
   #TODO: implement your louchebem translator
 end
