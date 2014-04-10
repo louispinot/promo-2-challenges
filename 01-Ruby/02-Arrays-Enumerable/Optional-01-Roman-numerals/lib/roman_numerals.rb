@@ -5,15 +5,15 @@ def old_roman_numeral(an_integer)
 
 
 
-  numeral = an_integer.to_s.split("").reverse!
+  numeral = an_integer.to_s.split("").reverse.map {|digit| digit.to_i}
 
   translator = Hash.new
 
   numeral.each {|digit|
-    if digit.to_i < 5
-      translator[digit] = [0, digit.to_i,]
+    if digit < 5
+      translator[digit] = [0, digit]
     else
-      translator[digit] = [1, (digit.to_i-5)]
+      translator[digit] = [1, (digit-5)]
     end  }
 
   print translator
@@ -30,9 +30,9 @@ def old_roman_numeral(an_integer)
   puts
 
   roman = []
-
+####### ecrire une fonction ayant 2 array pr input qui ressort un array.
   for k in 0..(coordinates.count-1) do
-    roman[k] = coordinates[k][0]*map[k][0] #+ coordinates[k][1]*map[k][1]
+    roman[k] = coordinates[k][0]*map[k][0] + coordinates[k][1]*map[k][1]
   end
 
 print roman
