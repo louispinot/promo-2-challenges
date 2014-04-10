@@ -1,3 +1,13 @@
+def new_roman_numeral(an_integer)
+  #TODO: translate integer in roman number - modern-style way
+
+  old_roman = old_roman_numeral(an_integer)
+
+
+end
+
+
+
 def old_roman_numeral(an_integer)
   arab_numbers = an_integer.to_s.split("").reverse.map {|digit| digit.to_i}
   coordinates = mapping_coordinates(arab_numbers)
@@ -7,9 +17,7 @@ def old_roman_numeral(an_integer)
 
   roman_numerals = roman_numerals.reverse.join
 
-  print roman_numerals
-  puts
-
+  roman_numerals
 end
 
 
@@ -38,11 +46,3 @@ def conversion(map,coordinates)
   end
   converted_array
 end
-
-
-
-def roman_numeral(an_integer)
-  #TODO: translate integer in roman number - modern-style way
-end
-
-print old_roman_numeral(40)
