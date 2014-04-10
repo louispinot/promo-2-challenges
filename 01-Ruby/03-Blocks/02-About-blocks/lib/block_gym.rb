@@ -22,4 +22,10 @@ end
 
 def transform(element)
   #TODO:  Simply execute the given block on element
+  yield element
+
 end
+
+## argument in a bloc: {|arg|   dfdfdfsd }
+
+#  transform(thing) {|thing| jknjkjnnk}
