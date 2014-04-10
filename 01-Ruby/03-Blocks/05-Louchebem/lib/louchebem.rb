@@ -21,8 +21,11 @@ end
 
 
 def deal_with_start (word, vowels=%w(a e i o u y))
-    unless vowels.include? word[0]  # commence par une voyelle
-      move_2_letters = {word[0..1] = "qu" || word[0..1] = "gu" || vowels.include? word[1]}
+
+     unless vowels.include? word[0]  do # commence par une voyelle
+
+      move_2_letters =  word[0..1] == "qu" || word[0..1] == "gu" || vowels.include? word[1]
+
       if move_2_letters
           start = word[0..1]
           word = word[2..-1] + start
@@ -30,6 +33,7 @@ def deal_with_start (word, vowels=%w(a e i o u y))
         start = word[0]
         word = word[1..-1] + start
       end
+    end
     word = word.insert(0, "l")
 end
 
@@ -43,4 +47,5 @@ end
 
 def louchebemize(sentence)
   #TODO: implement your louchebem translator
+
 end
