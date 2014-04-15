@@ -11,6 +11,7 @@ def generate_grid(grid_size)
 end
 
 def run_game(attempt, grid, start_time, end_time)
+  attempt.upcase!
   in_grid = true
   attempt.chars.each do |letter|
     in_grid = false unless grid.include? letter
@@ -42,10 +43,10 @@ def translate(word, start_time, end_time)
     }
     return not_english
   else
-    translation = hsh_of_hsh["term0"]["PrincipalTranslations"]["0"]["FirstTranslation"]["term"]
+    translation = hsh_of_hsh["term0"]["PrincipalTranslations"]["0"]["FirstTranslation"]["term"].split(",")[0]
     result = {translation: translation,
       time: end_time - start_time,
-      message: "Well done"
+      message: "well done"
     }
     result[:score] = compute_score(result[:time].to_i, word)
     return result
