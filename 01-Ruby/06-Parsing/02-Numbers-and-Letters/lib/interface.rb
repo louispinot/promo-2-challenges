@@ -8,7 +8,7 @@ puts "*****************************************************"
 
 puts "What's your best shot ?"
 start_time = Time.now
-attempt = gets.chomp.upcase
+attempt = gets.chomp
 end_time = Time.now
 
 puts "******** Now your result ********"
