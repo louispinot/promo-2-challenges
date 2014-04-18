@@ -6,7 +6,7 @@ You use the `self` keyword in ruby to access the context that the program is cur
 
 2. The Class or Module context where the `self` keyword represents a Class or a Module
 
-3. The object context where `self` represents an instance of a class. 
+3. The object context where `self` represents an instance of a class.
 
 The rule is simple. Used inside an instance method, self will point to an object on which the method is called. When used inside the class or module, or before the method name when defining a class method (i.e. `def self.method ; end`), self represent the first class or module enclosing it.
 
