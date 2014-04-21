@@ -1,20 +1,17 @@
-class recipe
+class Recipe
 
   attr_accessor :ingredients, :name, :description
 
-  def initialize(name)
-    @name = name
-    @ingredients = ingredients
-    @description = description
+  def initialize(args = {name: "", description: "", ingredients: {}})
+    @name = args[:name]
+    @ingredients = args[:ingredients]
+    @description = args[:description]
   end
 
   def to_a
-    name = @name
-    ingredients = @ingredients
-    description = @description
-    recipe_to_array = [name, description]
-    ingredients.each do |ingredient, quantity|
-      recipe_to_array << ingredients
+    recipe_to_array = [@name, @description]
+    @ingredients.each do |ingredient, quantity|
+      recipe_to_array << ingredient
       recipe_to_array << quantity
     end
     recipe_to_array
@@ -22,13 +19,17 @@ class recipe
 end
 
 
+# tourte = Recipe.new ({name: "tourte au boeuf", description: 'Miam', ingredients: {beurre: "150g", boeuf: '200g'}})
+# p tourte.name
+# p tourte.description
+# p tourte.ingredients
 
+# p tourte.to_a
 
+# tourte.name = "tourte a la viande"
+# tourte. description = "Fat!!"
 
-
-
-
-
+# p tourte.to_a
 
 
 

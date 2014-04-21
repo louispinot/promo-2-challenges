@@ -1,9 +1,11 @@
+require_relative 'recipe'
+
 class UI
   TASKS = {
     list: "- List all recipes [list]",
     add:  "- Add a new recipe [add]",
     del:  "- Delete a recipe [del]",
-    mod:  "- Modify an existing recipe",
+    mod:  "- Modify an existing recipe [mod]",
     exit: "- Exit [exit]"
   }
 
@@ -13,6 +15,35 @@ class UI
   end
 
   def mod
+    puts "Please enter the index of the recipe you wish to modify"
+    index = gets.chomp.to_i
+    recipe = @controller.call(index-1)
+
+    puts "Enter a new name or press 'Enter' to enter a new description"
+    answer = gets.chomp
+    recipe.name = answer unless answer == ""
+
+    puts "Enter a new description or press 'Enter' to enter new ingredients"
+    answer = gets.chomp
+    recipe.description = answer unless answer == ""
+
+
+    ingredients = {}
+    puts "Do you want to change the ingredients? ('Y' or 'N')"
+    answer = gets.chomp.capitalize
+    if answer == 'Y'
+      until answer == ""
+        puts "enter a new ingredient or press enter to save changes?"
+        answer = gets.chomp.upcase
+        unless answer == ""
+          puts "how much do you need?"
+          qty = gets.chomp
+          ingredients[answer] = qty
+        end
+      end
+      recipe.ingredients = ingredients
+    end
+  "this recipe has been modified"
   end
 
   def list
@@ -20,7 +51,7 @@ class UI
     # TODO: format and display the retrieved data in a numbered list
     recipes = @controller.list
     recipes.each_with_index do |recipe, i|
-      puts "#{(i + 1)}: #{recipe[0]}"
+      puts "#{(i + 1)}: #{recipe.to_a}"
     end
   end
 
@@ -35,18 +66,15 @@ class UI
 
     answer = nil
     ingredients = {}
-    until answer = 'N' do
-      puts "Do you want to add an ingredient? ('Y' to add, 'N' to exit"
-      answer = gets.chomp.upcase
-      if answer == 'Y'
-        puts "Please enter an ingredient"
-        item = gets.chomp.capitalize
-        puts "Please enter the corresponding quantity"
-        quantity = gets.chomp
-        ingredients[item] = quantity
+    until answer == ""
+      puts "please enter an ingredient or press 'enter' to continue"
+      answer = gets.chomp
+      unless answer == ""
+        puts "please enter the corresponding quantity"
+        qty = gets.chomp
+        ingredients[answer] = qty
       end
     end
-
     @controller.add({name: name, ingredients: ingredients, description: description})
 
   end
@@ -55,9 +83,9 @@ class UI
     # TODO: ask the user a recipe index
     # TODO: call the appropriate controller method with the proper argument(s)
     puts "Please enter the index of the recipe you wish to delete"
-      index = gets.chomp.to_i
-      @controller.delete(index - 1)
-      "your recipe has been deleted from the cookbook"
+    index = gets.chomp.to_i
+    @controller.delete(index - 1)
+    "your recipe has been deleted from the cookbook"
   end
 
   def exit

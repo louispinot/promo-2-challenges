@@ -21,5 +21,8 @@ class Controller
     @cookbook.all
   end
 
+  def call(index)
+    @cookbook.call(index)
+  end
 end
 
