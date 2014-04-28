@@ -1,13 +1,21 @@
-require './models/recipe'
-require './models/user'
+require_relative '../models/post'
+require_relative '../models/user'
+require 'faker'
 
-# Seed you database with recipe data from marmiton
+# Seed you database with users
 puts "Seeding database..."
-# Here is a sample of ingredients (you are free to add some !)
-ingredients = ["curry", "crevettes", "agneau", "pomme", "orange", "café", "asperges", "celeri", "dorade"]
 
+100.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  User.create(name: name, email: email)
+end
 
-
-# creates users with the Faker Gem
+# # Seed your DB with articles
+# 500.times do
+#   name = Faker::Name.name
+#   email = Faker::Internet.email
+#   User.create(name: name, email: email)
+# end
 
 # for each user, pick randomly one ingredient or more from the list of ingredients and attach recipes to the user
