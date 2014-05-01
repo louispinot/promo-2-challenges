@@ -1,6 +1,26 @@
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 840px;
 	font-family: 'Open Sans', sans-serif;
 }
 
+header {border-bottom: 1px solid black}
+
+
+nav {float: left;
+    padding-top: 1em;
+  }
+nav ul {list-style-type: none;}
+
+.content, footer {margin-left: 140px;
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-left: 1px solid black;
+  }
+
+
+/*  width: 140px;
+    padding-left: 140px
+
+    */
