@@ -1,4 +1,4 @@
-require 'rake'
+wrequire 'rake'
 
 require_relative 'config/application'
 
