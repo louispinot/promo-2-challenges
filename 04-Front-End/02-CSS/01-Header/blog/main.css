@@ -1,5 +1,13 @@
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 720px;
 	font-family: 'Open Sans', sans-serif;
 }
+
+header {text-align: center;
+  border-bottom :1px dotted gray }
+
+header ul {list-style: none;}
+
+header li {display: inline;
+  margin-right: 3em}
