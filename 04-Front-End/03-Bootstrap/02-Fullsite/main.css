@@ -1,0 +1,33 @@
+#landing-central {
+  margin-top: 14%;
+  margin-left: 14%;
+  width: 430px;
+  min-height: 30em;
+}
+
+#profile-central {
+  min-height: 43em;
+  padding-top: 7%;
+}
+
+#signin-central {
+  max-width: 500px;
+  border: 1px solid lightgray ;
+  margin-top: 10em;
+  margin-bottom: 16em;
+}
+
+
+footer {
+  margin: 0 auto;
+  bottom:0;
+  height: 110px;
+  padding-top: 1.5em;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.row div img {
+  padding: 2em;
+}
