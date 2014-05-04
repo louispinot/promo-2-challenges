@@ -10,6 +10,16 @@
   padding-top: 7%;
 }
 
+#my-circles-central {
+  margin-top: 7em;
+  margin-bottom: 19em;
+}
+
+#popular-circles-central {
+  margin-top: 7em;
+  margin-bottom: 3em;
+}
+
 #signin-central {
   max-width: 500px;
   border: 1px solid lightgray ;
@@ -30,4 +40,10 @@ footer {
 
 .row div img {
   padding: 2em;
+}
+
+.center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
