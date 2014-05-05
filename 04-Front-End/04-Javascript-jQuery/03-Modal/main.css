@@ -29,3 +29,14 @@ img {
   height: 600px;
   z-index:500;
 }
+
+.framed-picture {
+  height:80%;
+  width: auto;
+  margin-top: 20px;
+}
+
+.caption{
+  text-align: center;
+  font-weight: 700;
+}

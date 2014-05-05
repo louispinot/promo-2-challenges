@@ -8,36 +8,35 @@ $(document).ready(function(){
 function modal() {
   $('img').click(function(e) {
 
-    $img = $(this).addClass('center')
-    caption = $(this).attr('alt');
+    // this creates a jquery object from the image
+    var $img = $(this);
+    $img.addClass('center').addClass('framed-picture');
 
+    // this grabs the caption from the alt attribute
+    var caption = $(this).attr('alt');
+
+    //this creates a <p> for the caption
+    var $captionTag = $('<p>').addClass('caption').text(caption);
+
+    // this drops a dark background on the whole page
     var $background = $('<div>').addClass('modal-background');
     $('body').append($background);
 
-    var $frame = $('<div>').addClass('frame').addClass('center').addClass('container');
+    // this creates a white frame
+    var $frame = $('<div>').addClass('frame').addClass('center');
 
-    $imgRow = $('<div>').addClass('row').append($img);
+    //this adds the caption and picture to the frame
+    $frame.append($img);
+    $frame.append($captionTag);
 
-    rowHtml = "<p style='text-align: center'><strong>" + caption + "</p></strong>";
-    $captionRow = $('<div>').addClass('row').html(rowHtml);
-    $captionRow.addClass('center');
-
-    $frame.append($imgRow);
-    $frame.append($captionRow);
-
+    //this drops the frame onto the background
     $('body').append($frame);
-
-
 
   });
 };
 
+function clear() {
+  $('.modal-background').click(function(e) {
 
-// <div class="container">
-//   <div class="row">
-//     &img
-//   </div>
-//   <div class="row">
-//     <p>strong caption strong</p>
-//   </div>
-// </div>
+  });
+};
