@@ -16,7 +16,6 @@ function run_challenges() {
         // </div>
 var email = $('input#email').val();
 
-
   // Ex 2. Fill the content of the email input with your email
 
         // $( "#greatphoto" ).attr( "alt", "Beijing Brush Seller" );
