@@ -18,7 +18,7 @@ You will start by building a simple two-player board.  This will be rendered via
 ```html
 <table class="racer_table">
   <tr id="player1_race">
-    <td></td>
+    <td></td>j
     <td class="active"></td>
     <td></td>
     <td></td>

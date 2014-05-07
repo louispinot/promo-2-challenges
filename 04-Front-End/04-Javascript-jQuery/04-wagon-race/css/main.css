@@ -1,0 +1,31 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.racer_table {
+  margin: 20px;
+}
+
+.racer_table td {
+  background-color: white;
+  height: 85px;
+  width: 170px;
+  color: red;
+  font-size: 72px;
+}
+
+.racer_table tr {
+  border-top: red 2px solid;
+  border-bottom: red 2px solid;
+}
+
+.player1_race .active {
+  background:url(../img/player_1.png) no-repeat center center;
+  background-size: 100%;
+}
+
+.player2_race .active {
+  background:url(../img/player_2.png) no-repeat center center;
+  background-size: 100%;
+}
