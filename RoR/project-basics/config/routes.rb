@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   get 'user/new' => "users#new", as: "new_user"
 
-  get 'show/:id' => "users#show", as: "show"
+  get 'show_user/:id' => "users#show", as: "show_user"
 
   get 'users' => "users#list", as: "list"
 
-  post 'user' => "users#create", as: "create_user"
+  post 'user' => "users#create"
 
   root 'home#welcome'
 

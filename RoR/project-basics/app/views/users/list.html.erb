@@ -1,19 +1,21 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
+<div class="panel panel-primary container">
+  <div class="panel-heading row">
     <h1>Here is a list of all my users</h1>
+    <button type="button" class="btn btn-default pull-right"><%= link_to "Home", root_path %></button>
   </div>
-  <div class="panel-body">
+  <div class="panel-body row">
     <table class="table">
       <% @users.each do |user| %>
         <tr>
           <td>
-            <span class="glyphicon glyphicon-user"></span> <%= user.name %>
+            <span class='glyphicon glyphicon-user'></span>
+             <%= link_to user.name, show_user_path(user.id) %>
           </td>
           <td>
             <%= image_tag user.picture_url, size:"50x70", alt:(user.name + "'s picture") %>
           </td>
           <td>
-            <%= user.description %>
+            <%= user.description[0..80] + "(...)" %>
           </td>
         </tr>
       <% end %>

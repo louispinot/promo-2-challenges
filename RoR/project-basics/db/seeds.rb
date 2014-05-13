@@ -10,7 +10,7 @@
 50.times do
   name = Faker::Name.name
   url = "http://i.imgur.com/J0LMopm.jpg"
-  description = Faker::Lorem.sentence
+  description = Faker::Lorem.paragraphs(paragraph_count = 3, supplemental = false).join
 
   User.create(
     name: name,
