@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>Here is a list of all my users</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <span class="glyphicon glyphicon-user"></span> <%= user.name %>
+          </td>
+          <td>
+            <%= image_tag user.picture_url, size:"50x70", alt:(user.name + "'s picture") %>
+          </td>
+          <td>
+            <%= user.description %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
