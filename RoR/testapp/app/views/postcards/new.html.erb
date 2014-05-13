@@ -1,0 +1,34 @@
+<h1>Création d'une nouvelle carte postale</h1>
+
+<%= form_for @postcard do |form| %>
+  <div>
+    <%= form.label :author, 'Auteur' %>
+    <%= form.text_field :author %>
+  </div>
+  <div>
+    <%= form.label :picture_url, "URL de l'Image" %>
+    <%= form.text_field :picture_url %>
+  </div>
+  <div>
+    <%= form.label :message, 'Message' %>
+    <%= form.text_field :message %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+
+<form action="<%= postcards_path %>" method="post">
+  <div>
+    <label for="author">Auteur</label>
+    <input type="text" name="postcard[author]" id="author"/>
+  </div>
+  <div>
+    <label for="picture_url">URL Image</label>
+    <input type="text" name="postcard[picture_url]" id="picture_url"/>
+  </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea name="postcard[message]" id="message"></textarea>
+  </div>
+  <input type="submit"/>
+</form>

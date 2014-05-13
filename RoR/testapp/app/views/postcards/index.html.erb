@@ -1,0 +1,24 @@
+<h1>c'est MA liste</h1>
+
+
+<p><%= link_to("Nouvelle Carte", new_postcard_path) %></p>
+
+<table>
+<% @postcards.each do |postcard| %>
+  <tr>
+    <td>
+      <%= link_to(postcard.author, "/postcards/#{postcard.id}", class: "my-link") %>
+      <%= link_to postcard.author, {controller: "postcards", action: "show", id: postcard.id}, class: "my-link" %>
+    </td>
+    <td>
+      <%= postcard.created_at%>
+    </td>
+    <td>
+      <%= postcard.message%>
+    </td>
+    <td>
+      <%= image_tag(postcard.picture_url, {size: '50x50', alt: 'Fizzer'}) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
